@@ -1,0 +1,463 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terminal Palette — twenty themes for macOS Terminal.app</title>
+<style>
+:root{--ink:#E8E4DC;--paper:#111013;--line:#2A2830;--mut:#8E8A94;--acc:#D8C58A}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);
+  font:15px/1.55 "Iowan Old Style","Palatino",Georgia,serif;padding:0 0 96px}
+.mono{font-family:"SF Mono",ui-monospace,Menlo,monospace}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{font:600 11px/1 "SF Mono",ui-monospace,monospace;
+  letter-spacing:.22em;color:var(--acc);text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,58px);font-weight:600;letter-spacing:-.01em;
+  margin:14px 0 10px}
+.hero p{color:var(--mut);max-width:56ch}
+.filters{display:flex;gap:8px;margin:26px 0 0}
+.filters button{font:600 12px/1 "SF Mono",ui-monospace,monospace;
+  letter-spacing:.08em;background:none;border:1px solid var(--line);
+  color:var(--mut);padding:8px 14px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--paper);background:var(--ink);
+  border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:28px;padding-top:36px}
+.card{border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;
+  background:#161519}
+.card header{display:flex;align-items:baseline;justify-content:space-between}
+.card h2{font-size:19px;font-weight:600}
+.tag{font:600 10px/1 "SF Mono",ui-monospace,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mut)}
+.desc{color:var(--mut);font-size:13.5px;margin:4px 0 12px}
+.term{border-radius:10px;overflow:hidden;background-color:var(--bg);
+  background-size:cover;background-position:center;
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset}
+.bar{display:flex;align-items:center;gap:6px;padding:8px 10px;
+  background:color-mix(in srgb,var(--bg) 82%,var(--fg) 18%)}
+.bar i{width:10px;height:10px;border-radius:50%}
+.bar .r{background:#FF5F57}.bar .y{background:#FEBC2E}.bar .g{background:#28C840}
+.bar span{margin-left:6px;font:11px/1 "SF Mono",ui-monospace,monospace;
+  color:var(--fg);opacity:.55}
+.term pre{padding:12px 14px 14px;font:12.5px/1.75 "SF Mono",ui-monospace,Menlo,monospace;
+  color:var(--fg);overflow-x:auto}
+.term .p{color:var(--c6)}.term .b{color:var(--c4);font-weight:700}
+.term .dim{color:var(--c8)}
+.term .c1{color:var(--c1)}.term .c2{color:var(--c2)}.term .c3{color:var(--c3)}
+.term .c4{color:var(--c4)}.term .c5{color:var(--c5)}.term .c6{color:var(--c6)}
+.term .selx{background:var(--sel);color:var(--fg)}
+.term .cur{background:var(--cur)}
+.strip{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;margin-top:12px}
+.strip i{display:block;height:14px;border-radius:3px;cursor:help}
+footer{margin-top:64px;color:var(--mut);font-size:13px;
+  border-top:1px solid var(--line);padding-top:20px}
+@media (prefers-reduced-motion:no-preference){
+  .card{transition:transform .18s ease}.card:hover{transform:translateY(-2px)}}
+</style></head><body>
+<div class="wrap">
+ <section class="hero">
+  <div class="eyebrow">specimen sheet · macOS Terminal.app</div>
+  <h1>Terminal Palette</h1>
+  <p>Twenty themes — twelve dark, eight light, five of them backed by real
+  texture (paper, linen, canvas, charcoal, denim). Every color in every theme
+  is contrast-checked against its background — nothing disappears, not even
+  ANSI black on dark or yellow on cream. Double-click a
+  <span class="mono">.terminal</span> file to install, or run
+  <span class="mono">install.sh</span>.</p>
+  <div class="filters" role="group" aria-label="Filter themes">
+    <button aria-pressed="true" data-f="all">ALL 20</button>
+    <button aria-pressed="false" data-f="dark">DARK 12</button>
+    <button aria-pressed="false" data-f="light">LIGHT 8</button>
+    <button aria-pressed="false" data-f="tex">TEXTURED 5</button>
+  </div>
+ </section>
+ <section class="grid">
+<article class="card" data-kind="dark">
+  <header><h2>Midnight Harbor</h2><span class="tag">dark</span></header>
+  <p class="desc">Deep navy with cool cyan light — a harbor at night.</p>
+  <div class="term" style="--bg:#0B1622;--fg:#D9E4EF;--sel:#224F5A;--cur:#56D4DD;--c0:#586572;--c1:#FF7A85;--c2:#5FD3A2;--c3:#FFC876;--c4:#6CB2FF;--c5:#C792EA;--c6:#56D4DD;--c7:#C0CBD6;--c8:#7C8793;--c9:#FFADB4;--c10:#85E0BA;--c11:#FFDCA9;--c12:#9FCDFF;--c13:#DDBBF4;--c14:#7EE1E8;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Midnight Harbor — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#586572" title="#586572"></i><i style="background:#FF7A85" title="#FF7A85"></i><i style="background:#5FD3A2" title="#5FD3A2"></i><i style="background:#FFC876" title="#FFC876"></i><i style="background:#6CB2FF" title="#6CB2FF"></i><i style="background:#C792EA" title="#C792EA"></i><i style="background:#56D4DD" title="#56D4DD"></i><i style="background:#C0CBD6" title="#C0CBD6"></i><i style="background:#7C8793" title="#7C8793"></i><i style="background:#FFADB4" title="#FFADB4"></i><i style="background:#85E0BA" title="#85E0BA"></i><i style="background:#FFDCA9" title="#FFDCA9"></i><i style="background:#9FCDFF" title="#9FCDFF"></i><i style="background:#DDBBF4" title="#DDBBF4"></i><i style="background:#7EE1E8" title="#7EE1E8"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Ember</h2><span class="tag">dark</span></header>
+  <p class="desc">Warm charcoal and firelight orange; cozy, low glare.</p>
+  <div class="term" style="--bg:#1A1412;--fg:#F1E5D8;--sel:#5F3728;--cur:#FF8A5C;--c0:#6A615A;--c1:#FF7A55;--c2:#A9CB80;--c3:#FFB454;--c4:#74AFD8;--c5:#E593B4;--c6:#82D3C5;--c7:#D7CCC0;--c8:#90877F;--c9:#FFA288;--c10:#C2DBA3;--c11:#FFCA87;--c12:#9AC6E5;--c13:#F0BBD0;--c14:#A6E2D7;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Ember — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#6A615A" title="#6A615A"></i><i style="background:#FF7A55" title="#FF7A55"></i><i style="background:#A9CB80" title="#A9CB80"></i><i style="background:#FFB454" title="#FFB454"></i><i style="background:#74AFD8" title="#74AFD8"></i><i style="background:#E593B4" title="#E593B4"></i><i style="background:#82D3C5" title="#82D3C5"></i><i style="background:#D7CCC0" title="#D7CCC0"></i><i style="background:#90877F" title="#90877F"></i><i style="background:#FFA288" title="#FFA288"></i><i style="background:#C2DBA3" title="#C2DBA3"></i><i style="background:#FFCA87" title="#FFCA87"></i><i style="background:#9AC6E5" title="#9AC6E5"></i><i style="background:#F0BBD0" title="#F0BBD0"></i><i style="background:#A6E2D7" title="#A6E2D7"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Nordfjord</h2><span class="tag">dark</span></header>
+  <p class="desc">Cool blue-grey calm in the Scandinavian tradition.</p>
+  <div class="term" style="--bg:#232831;--fg:#E5EAF2;--sel:#415661;--cur:#88C0D0;--c0:#6D737D;--c1:#D2808A;--c2:#A3BE8C;--c3:#EBCB8B;--c4:#84A5C7;--c5:#B48EAD;--c6:#88C0D0;--c7:#CED3DB;--c8:#8E939B;--c9:#E1A4AC;--c10:#BDD1AC;--c11:#F4DFB5;--c12:#A6BFD8;--c13:#C9ACC4;--c14:#ABD4E0;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Nordfjord — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#6D737D" title="#6D737D"></i><i style="background:#D2808A" title="#D2808A"></i><i style="background:#A3BE8C" title="#A3BE8C"></i><i style="background:#EBCB8B" title="#EBCB8B"></i><i style="background:#84A5C7" title="#84A5C7"></i><i style="background:#B48EAD" title="#B48EAD"></i><i style="background:#88C0D0" title="#88C0D0"></i><i style="background:#CED3DB" title="#CED3DB"></i><i style="background:#8E939B" title="#8E939B"></i><i style="background:#E1A4AC" title="#E1A4AC"></i><i style="background:#BDD1AC" title="#BDD1AC"></i><i style="background:#F4DFB5" title="#F4DFB5"></i><i style="background:#A6BFD8" title="#A6BFD8"></i><i style="background:#C9ACC4" title="#C9ACC4"></i><i style="background:#ABD4E0" title="#ABD4E0"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Evergreen</h2><span class="tag">dark</span></header>
+  <p class="desc">Deep forest floor with moss, fern, and amber light.</p>
+  <div class="term" style="--bg:#101815;--fg:#DDE9E0;--sel:#314F39;--cur:#7FD08C;--c0:#5C6660;--c1:#F28B82;--c2:#7FD08C;--c3:#E4C580;--c4:#7BAEDC;--c5:#C39AC9;--c6:#6FC7B8;--c7:#C4D0C8;--c8:#818B85;--c9:#F9B4AE;--c10:#A3DFAD;--c11:#EFD9A8;--c12:#A2C7E8;--c13:#D7BADC;--c14:#92D7CB;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Evergreen — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#5C6660" title="#5C6660"></i><i style="background:#F28B82" title="#F28B82"></i><i style="background:#7FD08C" title="#7FD08C"></i><i style="background:#E4C580" title="#E4C580"></i><i style="background:#7BAEDC" title="#7BAEDC"></i><i style="background:#C39AC9" title="#C39AC9"></i><i style="background:#6FC7B8" title="#6FC7B8"></i><i style="background:#C4D0C8" title="#C4D0C8"></i><i style="background:#818B85" title="#818B85"></i><i style="background:#F9B4AE" title="#F9B4AE"></i><i style="background:#A3DFAD" title="#A3DFAD"></i><i style="background:#EFD9A8" title="#EFD9A8"></i><i style="background:#A2C7E8" title="#A2C7E8"></i><i style="background:#D7BADC" title="#D7BADC"></i><i style="background:#92D7CB" title="#92D7CB"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Velvet</h2><span class="tag">dark</span></header>
+  <p class="desc">Plush deep purple with soft jewel tones.</p>
+  <div class="term" style="--bg:#171220;--fg:#E7DFF1;--sel:#4F3D5E;--cur:#D2A0F0;--c0:#676071;--c1:#FF7E96;--c2:#8ED0A5;--c3:#F0C674;--c4:#93AAF6;--c5:#D2A0F0;--c6:#7ED3E6;--c7:#CEC6D8;--c8:#898393;--c9:#FFB1C0;--c10:#B1E0C1;--c11:#F7DAA0;--c12:#C1CEFB;--c13:#E7CBF8;--c14:#A7E3F0;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Velvet — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#676071" title="#676071"></i><i style="background:#FF7E96" title="#FF7E96"></i><i style="background:#8ED0A5" title="#8ED0A5"></i><i style="background:#F0C674" title="#F0C674"></i><i style="background:#93AAF6" title="#93AAF6"></i><i style="background:#D2A0F0" title="#D2A0F0"></i><i style="background:#7ED3E6" title="#7ED3E6"></i><i style="background:#CEC6D8" title="#CEC6D8"></i><i style="background:#898393" title="#898393"></i><i style="background:#FFB1C0" title="#FFB1C0"></i><i style="background:#B1E0C1" title="#B1E0C1"></i><i style="background:#F7DAA0" title="#F7DAA0"></i><i style="background:#C1CEFB" title="#C1CEFB"></i><i style="background:#E7CBF8" title="#E7CBF8"></i><i style="background:#A7E3F0" title="#A7E3F0"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Graphite</h2><span class="tag">dark</span></header>
+  <p class="desc">Disciplined monochrome with a single amber signal.</p>
+  <div class="term" style="--bg:#161719;--fg:#E4E4E4;--sel:#59472A;--cur:#F5B851;--c0:#656667;--c1:#E08E8E;--c2:#A9C0A0;--c3:#F5B851;--c4:#94AEC6;--c5:#BCA6C4;--c6:#93C2BE;--c7:#CBCBCC;--c8:#878889;--c9:#ECB5B5;--c10:#C5D5BE;--c11:#FBCC7E;--c12:#B4C7D9;--c13:#D3C4D9;--c14:#B3D5D2;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Graphite — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#656667" title="#656667"></i><i style="background:#E08E8E" title="#E08E8E"></i><i style="background:#A9C0A0" title="#A9C0A0"></i><i style="background:#F5B851" title="#F5B851"></i><i style="background:#94AEC6" title="#94AEC6"></i><i style="background:#BCA6C4" title="#BCA6C4"></i><i style="background:#93C2BE" title="#93C2BE"></i><i style="background:#CBCBCC" title="#CBCBCC"></i><i style="background:#878889" title="#878889"></i><i style="background:#ECB5B5" title="#ECB5B5"></i><i style="background:#C5D5BE" title="#C5D5BE"></i><i style="background:#FBCC7E" title="#FBCC7E"></i><i style="background:#B4C7D9" title="#B4C7D9"></i><i style="background:#D3C4D9" title="#D3C4D9"></i><i style="background:#B3D5D2" title="#B3D5D2"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Espresso</h2><span class="tag">dark</span></header>
+  <p class="desc">Roasted browns and crema — a café at closing time.</p>
+  <div class="term" style="--bg:#211A16;--fg:#F0E4D7;--sel:#5D472C;--cur:#E8B15E;--c0:#6E655D;--c1:#F08F70;--c2:#B2C07E;--c3:#E8B15E;--c4:#8FB2D4;--c5:#D09EBB;--c6:#8AC9B7;--c7:#D7CCC0;--c8:#938980;--c9:#F7B29C;--c10:#C7D29F;--c11:#F1C788;--c12:#B3CBE3;--c13:#E1C0D3;--c14:#ACDACD;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Espresso — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#6E655D" title="#6E655D"></i><i style="background:#F08F70" title="#F08F70"></i><i style="background:#B2C07E" title="#B2C07E"></i><i style="background:#E8B15E" title="#E8B15E"></i><i style="background:#8FB2D4" title="#8FB2D4"></i><i style="background:#D09EBB" title="#D09EBB"></i><i style="background:#8AC9B7" title="#8AC9B7"></i><i style="background:#D7CCC0" title="#D7CCC0"></i><i style="background:#938980" title="#938980"></i><i style="background:#F7B29C" title="#F7B29C"></i><i style="background:#C7D29F" title="#C7D29F"></i><i style="background:#F1C788" title="#F1C788"></i><i style="background:#B3CBE3" title="#B3CBE3"></i><i style="background:#E1C0D3" title="#E1C0D3"></i><i style="background:#ACDACD" title="#ACDACD"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Neon Dusk</h2><span class="tag">dark</span></header>
+  <p class="desc">Synthwave, restrained: dusk violet with electric accents.</p>
+  <div class="term" style="--bg:#14121F;--fg:#EBE7FF;--sel:#254D62;--cur:#4DD8FF;--c0:#635F72;--c1:#FF6E9C;--c2:#5CE0B8;--c3:#FFD166;--c4:#7BA2FF;--c5:#C87BFF;--c6:#4DD8FF;--c7:#D1CDE4;--c8:#8A879A;--c9:#FFA1BF;--c10:#84EBCC;--c11:#FFE099;--c12:#AEC6FF;--c13:#DDAEFF;--c14:#80E3FF;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Neon Dusk — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#635F72" title="#635F72"></i><i style="background:#FF6E9C" title="#FF6E9C"></i><i style="background:#5CE0B8" title="#5CE0B8"></i><i style="background:#FFD166" title="#FFD166"></i><i style="background:#7BA2FF" title="#7BA2FF"></i><i style="background:#C87BFF" title="#C87BFF"></i><i style="background:#4DD8FF" title="#4DD8FF"></i><i style="background:#D1CDE4" title="#D1CDE4"></i><i style="background:#8A879A" title="#8A879A"></i><i style="background:#FFA1BF" title="#FFA1BF"></i><i style="background:#84EBCC" title="#84EBCC"></i><i style="background:#FFE099" title="#FFE099"></i><i style="background:#AEC6FF" title="#AEC6FF"></i><i style="background:#DDAEFF" title="#DDAEFF"></i><i style="background:#80E3FF" title="#80E3FF"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Abyss</h2><span class="tag">dark</span></header>
+  <p class="desc">True-black OLED depth with high-clarity signals.</p>
+  <div class="term" style="--bg:#000000;--fg:#D7DFE8;--sel:#1C314C;--cur:#5EA2FF;--c0:#595B5F;--c1:#FF7B7B;--c2:#4FD684;--c3:#F2C14E;--c4:#5EA2FF;--c5:#C77DFF;--c6:#3FC6DE;--c7:#BDC4CC;--c8:#767B80;--c9:#FFAEAE;--c10:#76E2A0;--c11:#F8D37B;--c12:#91BFFF;--c13:#DDB0FF;--c14:#67D5E9;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Abyss — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#595B5F" title="#595B5F"></i><i style="background:#FF7B7B" title="#FF7B7B"></i><i style="background:#4FD684" title="#4FD684"></i><i style="background:#F2C14E" title="#F2C14E"></i><i style="background:#5EA2FF" title="#5EA2FF"></i><i style="background:#C77DFF" title="#C77DFF"></i><i style="background:#3FC6DE" title="#3FC6DE"></i><i style="background:#BDC4CC" title="#BDC4CC"></i><i style="background:#767B80" title="#767B80"></i><i style="background:#FFAEAE" title="#FFAEAE"></i><i style="background:#76E2A0" title="#76E2A0"></i><i style="background:#F8D37B" title="#F8D37B"></i><i style="background:#91BFFF" title="#91BFFF"></i><i style="background:#DDB0FF" title="#DDB0FF"></i><i style="background:#67D5E9" title="#67D5E9"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark">
+  <header><h2>Slate Rose</h2><span class="tag">dark</span></header>
+  <p class="desc">Warm grey slate with dusty rose and sage.</p>
+  <div class="term" style="--bg:#1C1B22;--fg:#E9E3E7;--sel:#5B3A46;--cur:#EE8399;--c0:#6B676E;--c1:#EE8399;--c2:#9FC4A6;--c3:#E3BE84;--c4:#97ABD3;--c5:#D79AB9;--c6:#8FC6C6;--c7:#D0CBCF;--c8:#8D898E;--c9:#F6AEBD;--c10:#BED8C3;--c11:#EED4AC;--c12:#BAC8E3;--c13:#E6BED2;--c14:#B0D8D8;--c15:#FFFFFF;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Slate Rose — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#6B676E" title="#6B676E"></i><i style="background:#EE8399" title="#EE8399"></i><i style="background:#9FC4A6" title="#9FC4A6"></i><i style="background:#E3BE84" title="#E3BE84"></i><i style="background:#97ABD3" title="#97ABD3"></i><i style="background:#D79AB9" title="#D79AB9"></i><i style="background:#8FC6C6" title="#8FC6C6"></i><i style="background:#D0CBCF" title="#D0CBCF"></i><i style="background:#8D898E" title="#8D898E"></i><i style="background:#F6AEBD" title="#F6AEBD"></i><i style="background:#BED8C3" title="#BED8C3"></i><i style="background:#EED4AC" title="#EED4AC"></i><i style="background:#BAC8E3" title="#BAC8E3"></i><i style="background:#E6BED2" title="#E6BED2"></i><i style="background:#B0D8D8" title="#B0D8D8"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="light">
+  <header><h2>Paper</h2><span class="tag">light</span></header>
+  <p class="desc">Warm cream and iron-gall ink; a fine notebook.</p>
+  <div class="term" style="--bg:#FAF6EC;--fg:#3A342B;--sel:#CDD5DD;--cur:#2D5FA8;--c0:#443E35;--c1:#A8322C;--c2:#4E7A27;--c3:#8F6400;--c4:#2D5FA8;--c5:#93398F;--c6:#1E7A82;--c7:#837E74;--c8:#746E65;--c9:#952620;--c10:#3F661C;--c11:#704F00;--c12:#215095;--c13:#812D7D;--c14:#14666D;--c15:#948E85;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Paper — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#443E35" title="#443E35"></i><i style="background:#A8322C" title="#A8322C"></i><i style="background:#4E7A27" title="#4E7A27"></i><i style="background:#8F6400" title="#8F6400"></i><i style="background:#2D5FA8" title="#2D5FA8"></i><i style="background:#93398F" title="#93398F"></i><i style="background:#1E7A82" title="#1E7A82"></i><i style="background:#837E74" title="#837E74"></i><i style="background:#746E65" title="#746E65"></i><i style="background:#952620" title="#952620"></i><i style="background:#3F661C" title="#3F661C"></i><i style="background:#704F00" title="#704F00"></i><i style="background:#215095" title="#215095"></i><i style="background:#812D7D" title="#812D7D"></i><i style="background:#14666D" title="#14666D"></i><i style="background:#948E85" title="#948E85"></i></div>
+</article>
+<article class="card" data-kind="light">
+  <header><h2>Morning Fog</h2><span class="tag">light</span></header>
+  <p class="desc">Cool grey-blue light through an early window.</p>
+  <div class="term" style="--bg:#F2F4F7;--fg:#333A45;--sel:#C8D4E7;--cur:#3161B0;--c0:#3D434E;--c1:#B03A48;--c2:#3D7A46;--c3:#8A6410;--c4:#3161B0;--c5:#7D4AA6;--c6:#197785;--c7:#7C8189;--c8:#676D75;--c9:#9E2D3B;--c10:#306839;--c11:#735208;--c12:#25529E;--c13:#6D3D95;--c14:#106370;--c15:#878B93;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Morning Fog — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#3D434E" title="#3D434E"></i><i style="background:#B03A48" title="#B03A48"></i><i style="background:#3D7A46" title="#3D7A46"></i><i style="background:#8A6410" title="#8A6410"></i><i style="background:#3161B0" title="#3161B0"></i><i style="background:#7D4AA6" title="#7D4AA6"></i><i style="background:#197785" title="#197785"></i><i style="background:#7C8189" title="#7C8189"></i><i style="background:#676D75" title="#676D75"></i><i style="background:#9E2D3B" title="#9E2D3B"></i><i style="background:#306839" title="#306839"></i><i style="background:#735208" title="#735208"></i><i style="background:#25529E" title="#25529E"></i><i style="background:#6D3D95" title="#6D3D95"></i><i style="background:#106370" title="#106370"></i><i style="background:#878B93" title="#878B93"></i></div>
+</article>
+<article class="card" data-kind="light">
+  <header><h2>Sakura</h2><span class="tag">light</span></header>
+  <p class="desc">Soft blossom pink with grounded, inky accents.</p>
+  <div class="term" style="--bg:#FBF2F4;--fg:#43333B;--sel:#ECC7CF;--cur:#B5304B;--c0:#4C3D44;--c1:#B5304B;--c2:#43793F;--c3:#93611B;--c4:#3E5EAE;--c5:#A03A8C;--c6:#23747E;--c7:#897C81;--c8:#776A70;--c9:#A3243E;--c10:#366732;--c11:#7E5111;--c12:#31509C;--c13:#8E2D7B;--c14:#19616A;--c15:#968A8F;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Sakura — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#4C3D44" title="#4C3D44"></i><i style="background:#B5304B" title="#B5304B"></i><i style="background:#43793F" title="#43793F"></i><i style="background:#93611B" title="#93611B"></i><i style="background:#3E5EAE" title="#3E5EAE"></i><i style="background:#A03A8C" title="#A03A8C"></i><i style="background:#23747E" title="#23747E"></i><i style="background:#897C81" title="#897C81"></i><i style="background:#776A70" title="#776A70"></i><i style="background:#A3243E" title="#A3243E"></i><i style="background:#366732" title="#366732"></i><i style="background:#7E5111" title="#7E5111"></i><i style="background:#31509C" title="#31509C"></i><i style="background:#8E2D7B" title="#8E2D7B"></i><i style="background:#19616A" title="#19616A"></i><i style="background:#968A8F" title="#968A8F"></i></div>
+</article>
+<article class="card" data-kind="light">
+  <header><h2>Mint Condition</h2><span class="tag">light</span></header>
+  <p class="desc">Fresh mint white with botanical greens.</p>
+  <div class="term" style="--bg:#F1F7F3;--fg:#2E3B34;--sel:#C6DCCE;--cur:#2C7A4B;--c0:#38443E;--c1:#AE3B37;--c2:#2C7A4B;--c3:#8B650A;--c4:#2E63A6;--c5:#8A4497;--c6:#1A7876;--c7:#78827D;--c8:#66706A;--c9:#9C2E2A;--c10:#21673D;--c11:#745203;--c12:#225493;--c13:#793785;--c14:#116361;--c15:#87908B;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Mint Condition — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#38443E" title="#38443E"></i><i style="background:#AE3B37" title="#AE3B37"></i><i style="background:#2C7A4B" title="#2C7A4B"></i><i style="background:#8B650A" title="#8B650A"></i><i style="background:#2E63A6" title="#2E63A6"></i><i style="background:#8A4497" title="#8A4497"></i><i style="background:#1A7876" title="#1A7876"></i><i style="background:#78827D" title="#78827D"></i><i style="background:#66706A" title="#66706A"></i><i style="background:#9C2E2A" title="#9C2E2A"></i><i style="background:#21673D" title="#21673D"></i><i style="background:#745203" title="#745203"></i><i style="background:#225493" title="#225493"></i><i style="background:#793785" title="#793785"></i><i style="background:#116361" title="#116361"></i><i style="background:#87908B" title="#87908B"></i></div>
+</article>
+<article class="card" data-kind="light">
+  <header><h2>Linen</h2><span class="tag">light</span></header>
+  <p class="desc">Neutral gallery white; quiet, exact, timeless.</p>
+  <div class="term" style="--bg:#F7F5F1;--fg:#37352F;--sel:#CED4E1;--cur:#3B5EA9;--c0:#413F39;--c1:#AC3B2E;--c2:#48762E;--c3:#86650C;--c4:#3B5EA9;--c5:#8E4290;--c6:#21747F;--c7:#807E79;--c8:#716F69;--c9:#992E22;--c10:#3A6322;--c11:#6F5205;--c12:#2E5097;--c13:#7C357E;--c14:#17616B;--c15:#8E8C87;">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+      <span>Linen — zsh — 80×24</span></div>
+    <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> echo <span class="c5">"deploy?"</span> <span class="dim"># comment</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+  </div>
+  <div class="strip"><i style="background:#413F39" title="#413F39"></i><i style="background:#AC3B2E" title="#AC3B2E"></i><i style="background:#48762E" title="#48762E"></i><i style="background:#86650C" title="#86650C"></i><i style="background:#3B5EA9" title="#3B5EA9"></i><i style="background:#8E4290" title="#8E4290"></i><i style="background:#21747F" title="#21747F"></i><i style="background:#807E79" title="#807E79"></i><i style="background:#716F69" title="#716F69"></i><i style="background:#992E22" title="#992E22"></i><i style="background:#3A6322" title="#3A6322"></i><i style="background:#6F5205" title="#6F5205"></i><i style="background:#2E5097" title="#2E5097"></i><i style="background:#7C357E" title="#7C357E"></i><i style="background:#17616B" title="#17616B"></i><i style="background:#8E8C87" title="#8E8C87"></i></div>
+</article>
+<article class="card" data-kind="light" data-tex="1">
+ <header><h2>Rag Paper</h2><span class="tag">light · textured</span></header>
+ <p class="desc">Warm cotton-rag paper with visible grain; ink-well accents.</p>
+ <div class="term" style="--bg:#F6EFE2;--fg:#3B3428;--sel:#DFCBB7;--cur:#8C4A1F;--c0:#443D31;--c1:#A6362B;--c2:#406525;--c3:#765404;--c4:#2F5C97;--c5:#8F3D8B;--c6:#1B6669;--c7:#7F786D;--c8:#625C52;--c9:#932A1F;--c10:#3B611F;--c11:#704F00;--c12:#25528C;--c13:#7D3079;--c14:#156264;--c15:#807A6C;;background-image:url(textures/rag-paper.png)">
+  <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+   <span>Rag Paper — zsh — 80×24</span></div>
+  <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+ </div>
+ <div class="strip"><i style="background:#443D31" title="#443D31"></i><i style="background:#A6362B" title="#A6362B"></i><i style="background:#406525" title="#406525"></i><i style="background:#765404" title="#765404"></i><i style="background:#2F5C97" title="#2F5C97"></i><i style="background:#8F3D8B" title="#8F3D8B"></i><i style="background:#1B6669" title="#1B6669"></i><i style="background:#7F786D" title="#7F786D"></i><i style="background:#625C52" title="#625C52"></i><i style="background:#932A1F" title="#932A1F"></i><i style="background:#3B611F" title="#3B611F"></i><i style="background:#704F00" title="#704F00"></i><i style="background:#25528C" title="#25528C"></i><i style="background:#7D3079" title="#7D3079"></i><i style="background:#156264" title="#156264"></i><i style="background:#807A6C" title="#807A6C"></i></div>
+</article>
+<article class="card" data-kind="light" data-tex="1">
+ <header><h2>Irish Linen</h2><span class="tag">light · textured</span></header>
+ <p class="desc">Cool natural linen weave; sea-glass and slate accents.</p>
+ <div class="term" style="--bg:#EFF1EC;--fg:#333A36;--sel:#C4D4CC;--cur:#2C6E5A;--c0:#3C433F;--c1:#AC3C44;--c2:#2C6E3F;--c3:#7B5C11;--c4:#2F63A8;--c5:#7C48A2;--c6:#176B7A;--c7:#7A807B;--c8:#5F6460;--c9:#9A2F37;--c10:#215B31;--c11:#6E510A;--c12:#235495;--c13:#6C3B91;--c14:#0F5B68;--c15:#7D847D;;background-image:url(textures/irish-linen.png)">
+  <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+   <span>Irish Linen — zsh — 80×24</span></div>
+  <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+ </div>
+ <div class="strip"><i style="background:#3C433F" title="#3C433F"></i><i style="background:#AC3C44" title="#AC3C44"></i><i style="background:#2C6E3F" title="#2C6E3F"></i><i style="background:#7B5C11" title="#7B5C11"></i><i style="background:#2F63A8" title="#2F63A8"></i><i style="background:#7C48A2" title="#7C48A2"></i><i style="background:#176B7A" title="#176B7A"></i><i style="background:#7A807B" title="#7A807B"></i><i style="background:#5F6460" title="#5F6460"></i><i style="background:#9A2F37" title="#9A2F37"></i><i style="background:#215B31" title="#215B31"></i><i style="background:#6E510A" title="#6E510A"></i><i style="background:#235495" title="#235495"></i><i style="background:#6C3B91" title="#6C3B91"></i><i style="background:#0F5B68" title="#0F5B68"></i><i style="background:#7D847D" title="#7D847D"></i></div>
+</article>
+<article class="card" data-kind="light" data-tex="1">
+ <header><h2>Raw Canvas</h2><span class="tag">light · textured</span></header>
+ <p class="desc">Ecru artist's canvas, coarse weave; earth-pigment accents.</p>
+ <div class="term" style="--bg:#EDE6D6;--fg:#3A352A;--sel:#DBC7AC;--cur:#9A5A16;--c0:#433E33;--c1:#A03B22;--c2:#4C6421;--c3:#765400;--c4:#365B95;--c5:#874182;--c6:#1D6663;--c7:#7E786B;--c8:#5F5A50;--c9:#943119;--c10:#415819;--c11:#664900;--c12:#2D538E;--c13:#7C3778;--c14:#155957;--c15:#7E786C;;background-image:url(textures/raw-canvas.png)">
+  <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+   <span>Raw Canvas — zsh — 80×24</span></div>
+  <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+ </div>
+ <div class="strip"><i style="background:#433E33" title="#433E33"></i><i style="background:#A03B22" title="#A03B22"></i><i style="background:#4C6421" title="#4C6421"></i><i style="background:#765400" title="#765400"></i><i style="background:#365B95" title="#365B95"></i><i style="background:#874182" title="#874182"></i><i style="background:#1D6663" title="#1D6663"></i><i style="background:#7E786B" title="#7E786B"></i><i style="background:#5F5A50" title="#5F5A50"></i><i style="background:#943119" title="#943119"></i><i style="background:#415819" title="#415819"></i><i style="background:#664900" title="#664900"></i><i style="background:#2D538E" title="#2D538E"></i><i style="background:#7C3778" title="#7C3778"></i><i style="background:#155957" title="#155957"></i><i style="background:#7E786C" title="#7E786C"></i></div>
+</article>
+<article class="card" data-kind="dark" data-tex="1">
+ <header><h2>Charcoal Sketch</h2><span class="tag">dark · textured</span></header>
+ <p class="desc">Toothy charcoal paper; soft pastel-pencil accents.</p>
+ <div class="term" style="--bg:#232323;--fg:#E7E4DF;--sel:#60523C;--cur:#EFC177;--c0:#898885;--c1:#E99494;--c2:#A9C79B;--c3:#EFC177;--c4:#93B4D8;--c5:#C7A3CE;--c6:#8FC7C1;--c7:#CFCDC8;--c8:#AAA9A7;--c9:#F2B9B9;--c10:#C5DABB;--c11:#F6D6A3;--c12:#B7CEE7;--c13:#DCC4E0;--c14:#B0D9D5;--c15:#FFFFFF;;background-image:url(textures/charcoal-sketch.png)">
+  <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+   <span>Charcoal Sketch — zsh — 80×24</span></div>
+  <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+ </div>
+ <div class="strip"><i style="background:#898885" title="#898885"></i><i style="background:#E99494" title="#E99494"></i><i style="background:#A9C79B" title="#A9C79B"></i><i style="background:#EFC177" title="#EFC177"></i><i style="background:#93B4D8" title="#93B4D8"></i><i style="background:#C7A3CE" title="#C7A3CE"></i><i style="background:#8FC7C1" title="#8FC7C1"></i><i style="background:#CFCDC8" title="#CFCDC8"></i><i style="background:#AAA9A7" title="#AAA9A7"></i><i style="background:#F2B9B9" title="#F2B9B9"></i><i style="background:#C5DABB" title="#C5DABB"></i><i style="background:#F6D6A3" title="#F6D6A3"></i><i style="background:#B7CEE7" title="#B7CEE7"></i><i style="background:#DCC4E0" title="#DCC4E0"></i><i style="background:#B0D9D5" title="#B0D9D5"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article>
+<article class="card" data-kind="dark" data-tex="1">
+ <header><h2>Indigo Denim</h2><span class="tag">dark · textured</span></header>
+ <p class="desc">Worn indigo twill with contrast-stitch gold.</p>
+ <div class="term" style="--bg:#1B2432;--fg:#E3E9F2;--sel:#5B4F3F;--cur:#F0B45E;--c0:#747E8E;--c1:#FF8B8B;--c2:#8CC98F;--c3:#F0B45E;--c4:#85B8FF;--c5:#C9A2E8;--c6:#7FD0DC;--c7:#CBD1DB;--c8:#979DA8;--c9:#FFBEBE;--c10:#AEDAB0;--c11:#F7CA8A;--c12:#B8D6FF;--c13:#E1CAF3;--c14:#A5E0E9;--c15:#FFFFFF;;background-image:url(textures/indigo-denim.png)">
+  <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i>
+   <span>Indigo Denim — zsh — 80×24</span></div>
+  <pre><span class="p">~/projects/flux</span> <span class="b">❯</span> git status
+On branch <span class="c2">main</span> · <span class="dim">2 files changed</span>
+  <span class="c3">modified:</span> src/App.tsx
+  <span class="c1">deleted: </span> src/legacy.ts
+<span class="p">~/projects/flux</span> <span class="b">❯</span> ls
+<span class="c4">node_modules/</span> <span class="c4">src/</span> <span class="c2">build.sh</span> package.json <span class="c6">README.md</span>
+<span class="p">~/projects/flux</span> <span class="b">❯</span> npm test
+<span class="c2">✓ 42 passed</span> <span class="c3">⚠ 1 skipped</span> <span class="dim">(1.2s)</span>
+<span class="selx">selected text looks like this</span><span class="cur"> </span></pre>
+ </div>
+ <div class="strip"><i style="background:#747E8E" title="#747E8E"></i><i style="background:#FF8B8B" title="#FF8B8B"></i><i style="background:#8CC98F" title="#8CC98F"></i><i style="background:#F0B45E" title="#F0B45E"></i><i style="background:#85B8FF" title="#85B8FF"></i><i style="background:#C9A2E8" title="#C9A2E8"></i><i style="background:#7FD0DC" title="#7FD0DC"></i><i style="background:#CBD1DB" title="#CBD1DB"></i><i style="background:#979DA8" title="#979DA8"></i><i style="background:#FFBEBE" title="#FFBEBE"></i><i style="background:#AEDAB0" title="#AEDAB0"></i><i style="background:#F7CA8A" title="#F7CA8A"></i><i style="background:#B8D6FF" title="#B8D6FF"></i><i style="background:#E1CAF3" title="#E1CAF3"></i><i style="background:#A5E0E9" title="#A5E0E9"></i><i style="background:#FFFFFF" title="#FFFFFF"></i></div>
+</article></section>
+ <footer>Import: double-click a <span class="mono">.terminal</span> file in
+ <span class="mono">themes/</span>, or run <span class="mono">install.sh</span>
+ (required for the textured themes). Set a default via Terminal ▸ Settings ▸
+ Profiles ▸ Default. Hover any swatch for its hex value. Textured previews use
+ the real texture files in <span class="mono">textures/</span>.</footer>
+</div>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.filters button').forEach(x=>
+   x.setAttribute('aria-pressed', x===b));
+ const f=b.dataset.f;
+ document.querySelectorAll('.card').forEach(c=>{
+   const show=f==='all'||(f==='tex'?c.dataset.tex==='1':c.dataset.kind===f);
+   c.style.display=show?'':'none';});});
+</script></body></html>
