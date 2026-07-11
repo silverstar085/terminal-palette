@@ -1,51 +1,31 @@
 #!/bin/bash
-# Terminal Palette — installs all 20 themes into macOS Terminal.app.
-# The five textured themes get their background textures wired up
-# automatically (copied to ~/Pictures/Terminal Textures).
+# Terminal Palette — imports all 15 themes into macOS Terminal.app.
+# Safe to re-run: profiles that already exist are skipped.
 set -e
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
 THEMES="$DIR/themes"
-DEST="$HOME/Pictures/Terminal Textures"
 
-# Textured themes and their background images.
-# (macOS ships bash 3.2, so no associative arrays.)
-texture_for() {
-  case "$1" in
-    "Rag Paper")       echo "rag-paper.png" ;;
-    "Irish Linen")     echo "irish-linen.png" ;;
-    "Raw Canvas")      echo "raw-canvas.png" ;;
-    "Charcoal Sketch") echo "charcoal-sketch.png" ;;
-    "Indigo Denim")    echo "indigo-denim.png" ;;
-    *)                 echo "" ;;
-  esac
+# Snapshot current Terminal profiles so re-runs don't create duplicates.
+TMP="$(mktemp -d)"
+defaults export com.apple.Terminal "$TMP/prefs.plist" 2>/dev/null || true
+has_profile() {
+  [[ -s "$TMP/prefs.plist" ]] && /usr/libexec/PlistBuddy \
+    -c "Print \":Window Settings:$1\"" "$TMP/prefs.plist" >/dev/null 2>&1
 }
 
-mkdir -p "$DEST"
-cp "$DIR/textures/"*.png "$DEST/"
-
-TMP="$(mktemp -d)"
+imported=0
 for f in "$THEMES"/*.terminal; do
   name="$(basename "$f" .terminal)"
-  tex="$(texture_for "$name")"
-  if [[ -n "$tex" ]]; then
-    # Textured theme: point it at the copied texture, then import.
-    cp "$f" "$TMP/$name.terminal"
-    plutil -replace BackgroundImagePath -string "$DEST/$tex" \
-      "$TMP/$name.terminal" 2>/dev/null || \
-    plutil -insert BackgroundImagePath -string "$DEST/$tex" \
-      "$TMP/$name.terminal"
-    open "$TMP/$name.terminal"
+  if has_profile "$name"; then
+    echo "Already installed: $name"
   else
     open "$f"
+    imported=$((imported+1))
+    sleep 0.4
   fi
-  sleep 0.4
 done
 
 echo
-echo "Done — all 20 themes imported."
+echo "Done — $imported profile(s) imported."
 echo "Pick a default: Terminal > Settings (⌘,) > Profiles > select a theme > Default."
-echo
-echo "If a textured theme shows a flat color (newer macOS ignores the path key),"
-echo "attach its texture once: Terminal > Settings > Profiles > [theme] >"
-echo "Background 'Color & Effects' > Image > Choose > $DEST"
