@@ -9,8 +9,9 @@ readable in all of them — nothing disappears, not even ANSI black on dark or
 yellow on cream. For the textured themes, colors are validated against the
 texture's brightest *and* darkest pixels, so text stays crisp on the grain.
 
-**Preview everything first:** open [`index.html`](index.html) in a browser
-for a live specimen sheet of all 20 themes with color swatches.
+**[Browse the live demo →](https://silverstar085.github.io/terminal-palette/)**
+— a specimen sheet of all 20 themes with color swatches (or open
+[`index.html`](index.html) locally).
 
 ## Install
 
